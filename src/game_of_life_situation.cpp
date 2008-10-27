@@ -6,6 +6,20 @@
 using namespace std;
 
 //-----------------------------------------------------------------------------
+bool game_of_life_situation::isFinal(void)const
+{
+  return m_alived.size() == 0;
+}
+
+//-----------------------------------------------------------------------------
+string game_of_life_situation::getUniqueId(void)const
+{
+  cout << "Not implemented" << endl ;
+  exit(-1);
+  return "";
+}
+
+//-----------------------------------------------------------------------------
 string game_of_life_situation::toString(void)const
 {
 	stringstream l_result ;
