@@ -17,10 +17,12 @@ class game_of_life_situation:public FSM_situation<game_of_life_context>
 
 		// Methods inherited from FSM_situation
 		string toString(void)const;
-		string getUniqueId(void)const;
+		string getStringId(void)const;
 		bool isFinal(void)const;
+		bool less(const FSM_situation_if *p_object2)const;
 
 		// Dedicated methods
+		bool less(const game_of_life_situation *p_situation)const;
 		void setAlived(unsigned int p_x,unsigned int p_y);
 		void stayAlived(unsigned int p_x,unsigned int p_y);
 		bool isAlived(unsigned int p_x,unsigned int p_y);

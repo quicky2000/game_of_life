@@ -12,7 +12,7 @@ bool game_of_life_situation::isFinal(void)const
 }
 
 //-----------------------------------------------------------------------------
-string game_of_life_situation::getUniqueId(void)const
+string game_of_life_situation::getStringId(void)const
 {
   cout << "Not implemented" << endl ;
   exit(-1);
@@ -102,4 +102,16 @@ game_of_life_situation::game_of_life_situation(void)
 set<pair<unsigned int,unsigned int> >& game_of_life_situation::getAlivedList(void)
 {
 	return m_alived;
+}
+
+//-----------------------------------------------------------------------------
+bool game_of_life_situation::less(const FSM_situation_if *p_situation)const
+{
+  return this->less(dynamic_cast<const game_of_life_situation*>(p_situation)); 
+}
+
+//-----------------------------------------------------------------------------
+bool game_of_life_situation::less(const game_of_life_situation *p_situation)const
+{
+  return m_alived < p_situation->m_alived; 
 }
